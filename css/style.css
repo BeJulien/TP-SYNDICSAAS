@@ -1,0 +1,225 @@
+/*
+----ORANGE : #EA9E0A --------;
+----BLEU   : #0D587F --------;
+*/
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #0D587F;
+}
+
+nav{
+    margin-bottom: 40px;
+}
+
+.sidenav {
+    height: 100%;
+    background-color: #FFF;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.main {
+    padding: 0px 10px;
+}
+
+.main p{
+    color:#EA9E0A;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 70%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+.login-main-text{
+    margin-top: 20%;
+    padding: 60px;
+    color: #EA9E0A;
+}
+
+#logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+    transition: transform 1s;
+}
+
+#logo:hover {
+    transform: scale(1.2);
+}
+
+.navbar{
+    background-color: white
+}
+
+.btnNav{
+    background-color: #EA9E0A !important;
+    color: #fff;
+}
+.btnNav:hover{
+    color: #0D587F;
+}
+
+.navItems {
+    display: block;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a{
+    color: #0D587F;
+}
+#mdpOublie{
+    color:#EA9E0A;
+}
+
+#tableList{
+    margin-bottom: 40px;
+    color: white;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+    text-align: center
+}
+
+#tableList td{
+    background-color: #EA9E0A;
+    padding: 10px;
+}
+
+#testLigne td{
+    background-color: #EDBF63;
+}
+
+#tableList i{
+    width: 30px;
+    height: auto;
+    float: left;
+}
+
+.modifG{
+    width: auto;
+}
+
+.deleteGestionnaire {
+    color: red;
+}
+
+.deleteCroix {
+    color: red;
+}
+
+.deleteCroix:hover {
+    color: #CF3222;
+}
+.btnAdd{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #EA9E0A !important;
+    color: #fff;
+}
+.btnAdd:hover{
+    color: #0D587F;
+}
+
+.titrePage{
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.checkCopropriete{
+    color:green;
+}
+
+.checkCopropriete:hover{
+    color:#23D21F;
+}
+
+#relanceTab{
+    text-align: left
+}
+/*
+----ORANGE : #EA9E0A --------;
+----BLEU   : #0D587F --------;
+Orange pour liste #EBCF1B
+*/
+
+input[type="range"] {
+    position: relative;
+    margin-left: 1em;
+}
+
+input[type="range"]:after,
+input[type="range"]:before {
+    position: absolute;
+    top: 1em;
+    color: #aaa;
+}
+input[type="range"]:before {
+    left:0em;
+    content: attr(min);
+}
+input[type="range"]:after {
+    right: 0em;
+    content: attr(max);
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: transparent;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  background-image: url(pizza.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
