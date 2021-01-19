@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/*
+----ORANGE : #EA9E0A --------;
+----BLEU   : #0D587F --------;
+*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0D587F !important;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+nav{
+    margin-bottom: 40px;
+}
+
+.sidenav {
+    height: 100%;
+    background-color: #FFF;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.main {
+    padding: 0px 10px;
+}
+
+.main p{
+    color:#EA9E0A;
+}
+
+#mdpOublie{
+    color:#EA9E0A;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 70%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+.login-main-text{
+    margin-top: 20%;
+    padding: 60px;
+    color: #EA9E0A;
+}
+
+#logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+    transition: transform 1s;
+}
+
+#logo:hover {
+    transform: scale(1.2);
+}
+
+.navbar{
+    width: 100%;
+    background-color: white;
+}
+
+.btnNav{
+    background-color: #EA9E0A !important;
+    color: #fff;
+}
+.btnNav:hover{
+    color: #0D587F;
+}
+
+#logoNav{
+    height: auto;width: 100px;
+    margin-left: 10px;
+    margin-right: 40px;
+}
+
+#tableList{
+    margin-bottom: 40px;
+    color: white;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+    text-align: center
+}
+
+#tableList td{
+    background-color: #EA9E0A;
+    padding: 10px;
+}
+
+#testLigne td{
+    background-color: #EDBF63;
+}
+
+#tableList i{
+    width: 30px;
+    height: auto;
+    float: left;
+}
+
+.modifG{
+    width: auto;
+}
+
+.deleteGestionnaire {
+    color: red;
+}
+
+.deleteCroix {
+    color: red;
+}
+
+.deleteCroix:hover {
+    color: #CF3222;
+}
+
+.titrePage{
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.checkCopropriete{
+    color:green;
+}
+
+.checkCopropriete:hover{
+    color:#23D21F;
+}
+
+#relanceTab{
+    text-align: left
+}
+
+.btnAdd{
+    background-color: #EA9E0A !important;
+    display: block !important;
+    margin : auto !important;
+}
+/*
+----ORANGE : #EA9E0A --------;
+----BLEU   : #0D587F --------;
+Orange pour liste #EBCF1B
+*/
+
+footer a{
+    color: #0D587F;
+    float: right;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #EA9E0A;
+    display: flex;
+    justify-content: center;
+}
+
+footer div{
+    line-height: 30px;
+    vertical-align: middle;
+    margin: 10px;
+}
+
+.form-group{
+    margin: 10px;
+    margin-left: 0px;
+}
