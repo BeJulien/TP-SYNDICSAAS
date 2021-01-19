@@ -1,11 +1,24 @@
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+>>>>>>> johan
 /*
 ----ORANGE : #EA9E0A --------;
 ----BLEU   : #0D587F --------;
 */
 
 body {
+<<<<<<< HEAD
     font-family: "Lato", sans-serif;
     background-color: #0D587F;
+=======
+    font-family: 'Roboto', sans-serif;
+    background-color: #0D587F !important;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+>>>>>>> johan
 }
 
 nav{
@@ -27,6 +40,13 @@ nav{
     color:#EA9E0A;
 }
 
+<<<<<<< HEAD
+=======
+#mdpOublie{
+    color:#EA9E0A;
+}
+
+>>>>>>> johan
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
 }
@@ -83,7 +103,12 @@ nav{
 }
 
 .navbar{
+<<<<<<< HEAD
     background-color: white
+=======
+    width: 100%;
+    background-color: white;
+>>>>>>> johan
 }
 
 .btnNav{
@@ -94,6 +119,7 @@ nav{
     color: #0D587F;
 }
 
+<<<<<<< HEAD
 .navItems {
     display: block;
 }
@@ -109,6 +135,12 @@ footer a{
 }
 #mdpOublie{
     color:#EA9E0A;
+=======
+#logoNav{
+    height: auto;width: 100px;
+    margin-left: 10px;
+    margin-right: 40px;
+>>>>>>> johan
 }
 
 #tableList{
@@ -151,6 +183,7 @@ footer a{
 .deleteCroix:hover {
     color: #CF3222;
 }
+<<<<<<< HEAD
 .btnAdd{
     display: block;
     margin-left: auto;
@@ -161,6 +194,8 @@ footer a{
 .btnAdd:hover{
     color: #0D587F;
 }
+=======
+>>>>>>> johan
 
 .titrePage{
     color: white;
@@ -179,12 +214,22 @@ footer a{
 #relanceTab{
     text-align: left
 }
+<<<<<<< HEAD
+=======
+
+.btnAdd{
+    background-color: #EA9E0A !important;
+    display: block !important;
+    margin : auto !important;
+}
+>>>>>>> johan
 /*
 ----ORANGE : #EA9E0A --------;
 ----BLEU   : #0D587F --------;
 Orange pour liste #EBCF1B
 */
 
+<<<<<<< HEAD
 input[type="range"] {
     position: relative;
     margin-left: 1em;
@@ -222,4 +267,30 @@ input[type="range"]::-webkit-slider-thumb {
   background-image: url(pizza.svg);
   background-position: center center;
   background-repeat: no-repeat;
+=======
+footer a{
+    color: #0D587F;
+    float: right;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #EA9E0A;
+    display: flex;
+    justify-content: center;
+}
+
+footer div{
+    line-height: 30px;
+    vertical-align: middle;
+    margin: 10px;
+}
+
+.form-group{
+    margin: 10px;
+    margin-left: 0px;
+>>>>>>> johan
 }
