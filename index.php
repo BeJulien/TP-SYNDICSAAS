@@ -1,16 +1,11 @@
-<<<<<<< HEAD
 <?php
 
-include("view/connexion.php");
+//include("view/connexion.php");
 
 
-
-
-
-
-include("view/footer.html");
+//include("view/footer.html");
 ?>
-=======
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,5 +31,3 @@ include('view/components/footer.html');
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
-
->>>>>>> johan
