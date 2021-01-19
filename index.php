@@ -25,7 +25,7 @@ include("view/footer.html");
 <?php
 
 //include('view/pages/connexion.php');
-include('controler/gestionnaireControler.php');
+include('controler/gestionnaireController.php');
 include('view/components/footer.html');
 
 
