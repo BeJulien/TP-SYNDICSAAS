@@ -20,7 +20,7 @@
 <?php
 
 //include('view/pages/connexion.php');
-include('controler/gestionnaireController.php');
+include('controller/gestionnaireController.php');
 include('view/components/footer.html');
 
 
