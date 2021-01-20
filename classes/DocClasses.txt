@@ -1,0 +1,4 @@
+Dans ce dossier se trouvent les classes DAO et DTO de l'ensemble des tables de la BDD
+Les DTO sont des objets représentant des enregistrements de tables dans la BDD
+Les DAO permettent l'envoi de requête dans la BDD, puis retournent le ou les enregistrements obtenus sous forme d'objet
+Tous les DAO/DTO ne sont pas encore créés.
