@@ -14,7 +14,7 @@ class DAOAdmin extends DAO
 		parent::__construct();
 	}
 
-	// Récupération d'un Gestionnaire dans la table Utilisateurs selon son ID
+	// Récupération d'un Administrateur dans la table Utilisateurs selon son ID
 	function getById($ID) 
 	{
 
