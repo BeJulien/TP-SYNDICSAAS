@@ -31,5 +31,6 @@
 			<td class="modifG"><i class="fas fa-cog fa-lg"></i><i class="fas fa-lg fa-times deleteCroix"></i></td>
 		</tr>	
 	</table>
-	<button class="btn btnAdd"><i class="fas fa-plus"></i> Ajouter un copropriété</button>
+	<a class="nav-link" href="index.php?act=ajouterCoproprieteForm"><button class="btn btnAdd"><i class="fas fa-plus"></i> Ajouter un copropriété</button></a>
+	<a href="index.php?act=modifierCoproprieteForm">Modifier (temporaire)</a>
 	
