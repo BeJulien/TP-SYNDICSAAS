@@ -2,7 +2,6 @@
 
 include('view/adminView/headerAdmin.php');
 
-echo $_SESSION['role'];
 if(isset($_GET['act'])){
 	$act = $_GET['act'];
 
@@ -14,6 +13,22 @@ switch ($act) {
 
 	case 'gestionCopropriete':
 		include('view/adminView/gestionCoproprieteTab.php');
+		break;
+
+	case 'ajouterGestionnaireForm':
+		include('view/adminView/ajouterGestionnaireForm.php');
+		break;
+
+	case 'modifierGestionnaireForm':
+		include('view/adminView/modifierGestionnaireForm.php');
+		break;
+
+	case 'ajouterCoproprieteForm':
+		include('view/adminView/ajouterCoproprieteForm.php');
+		break;
+
+	case 'modifierCoproprieteForm':
+		include('view/adminView/modifierCoproprieteForm.php');
 		break;
 
 	case 'deconnexion':
