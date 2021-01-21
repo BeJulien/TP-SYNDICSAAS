@@ -7,7 +7,6 @@
 */
 
 body {
-    font-family: "Lato", sans-serif;
     background-color: #0D587F;
     font-family: 'Roboto', sans-serif;
     background-color: #0D587F !important;
@@ -246,4 +245,26 @@ footer div{
 .form-group{
     margin: 10px;
     margin-left: 0px;
+}
+
+.btForm{
+    display: flex;
+    justify-content: center;
+}
+
+.btForm button{
+    margin: 10px;
+}
+
+.formulaireGestionInput .form-group .form-control{
+
+    width: 50%;
+    margin-left: auto; 
+    margin-right: 0px;
+}
+
+.formulaireGestionInput .form-group select{
+    width: 50%;
+    margin-left: auto; 
+    margin-right: 0px;
 }
