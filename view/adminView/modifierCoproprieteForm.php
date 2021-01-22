@@ -7,7 +7,7 @@
 				<input type="text" name="nom" class="form-control" placeholder="Nom">
 			</div>
 			<div class="form-group">
-				<input type="password" name="ville" class="form-control" placeholder="Ville">
+				<input type="text" name="ville" class="form-control" placeholder="Ville">
 			</div>
 			<div class="form-group">
 				<input type="text" name="adresse" class="form-control" placeholder="Adresse Postal">
