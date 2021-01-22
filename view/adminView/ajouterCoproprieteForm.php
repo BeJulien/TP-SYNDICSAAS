@@ -26,11 +26,6 @@
 					<!-- AJOUTER LES AUTRES VIA BDD -->
 				</select>
 			</div>
-			<div class="form-group">
-				<!-- CLIC SUR LABEL PEUT ETRE MODIFIER EN JS l'affichage-->
-				<input type="file" id="files" name="photo" class="form-control" placeholder="Photo" hidden>
-				<label for="files" class="form-control">Choisir un photo</label>
-			</div>
 			
 	</div>
 	<!-- Liste -->
