@@ -7,7 +7,8 @@ if(isset($_GET['act'])){
 
 switch ($act) {
 
-	default:
+	case 'accueil':
+		include('view/gestionnaireView/accueil.php');
 		break;
 
 	case 'gestionCoproprietaire':

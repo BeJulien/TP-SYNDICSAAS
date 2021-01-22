@@ -8,6 +8,10 @@ if(isset($_GET['act'])){
 
 switch ($act) {
 
+	case 'accueil':
+		include('view/coproprietaireView/accueil.php');
+		break;
+	
 	case 'deconnexion':
 		session_unset();
 		session_destroy();

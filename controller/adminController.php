@@ -7,6 +7,10 @@ if(isset($_GET['act'])){
 
 switch ($act) {
 
+	case 'accueil':
+		include('view/adminView/accueil.php');
+		break;
+	
 	case 'gestionGestionnaire':
 		include('view/adminView/gestionGestionnaireTab.php');
 		break;
