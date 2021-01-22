@@ -1,7 +1,7 @@
 <?php
 
 include('view/gestionnaireView/headerGestionnaire.php');
-echo $_SESSION['role'];
+
 if(isset($_GET['act'])){
 	$act = $_GET['act'];
 
@@ -21,6 +21,22 @@ switch ($act) {
 
 	case 'gestionCopropriete':
 		include('view/gestionnaireView/gestionCopropriete.php');
+		break;
+
+	case 'ajouterCoproprietaireForm':
+		include('view/gestionnaireView/ajouterCoproprietaireForm.php');
+		break;
+
+	case 'modifierCoproprietaireForm':
+		include('view/gestionnaireView/modifierCoproprietaireForm.php');
+		break;
+
+	case 'ajouterBienForm':
+		include('view/gestionnaireView/ajouterBienForm.php');
+		break;	
+
+	case 'modifierBienForm':
+		include('view/gestionnaireView/modifierBienForm.php');
 		break;
 
 	case 'deconnexion':
