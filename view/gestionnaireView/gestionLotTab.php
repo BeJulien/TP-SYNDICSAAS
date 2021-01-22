@@ -1,5 +1,5 @@
 
-	<h1 class="titrePage">Gestion des lots</h1>
+	<h1 class="titrePage">Gestion des biens</h1>
 	<table id="tableList">
 		<tr>
 			<th>Propriétaire</th>
@@ -33,4 +33,6 @@
 		</tr>
 	</table>
 
-	<div><button type="submit" class="btn btnAdd"><i class="fas fa-plus"></i> Ajouter un lot</button></div>
+<a class="nav-link" href="index.php?act=ajouterBienForm"><button type="submit" class="btn btnAdd"><i class="fas fa-plus"></i> Ajouter un bien</button></a>
+
+<a class="nav-link" href="index.php?act=modifierBienForm">Modifier (temporaire)</a>

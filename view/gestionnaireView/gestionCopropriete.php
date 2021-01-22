@@ -1,4 +1,18 @@
-	<h1 class="titrePage">Retards de paiement</h1>
+
+		<div class="d-flex justify-content-around mb-4">
+			<div class="text-light text-center">
+				Type d'échéance<br><input type="text" disabled id="typeEcheance">
+			</div>
+			<div class="text-light text-center">
+				Budget<br><input type="text"  id="typeEcheance"><button id="modifierBudget" class=" mt-1 btn btnAdd">Modifier</button>
+			</div>
+			<div class="text-light text-center">
+				Jours assemblés (mensuel)<br><input type="text"  id="typeEcheance"><button id="modifierEcheance" class=" mt-1 btn btnAdd">Modifier</button>
+			</div>
+		</div>
+
+
+	<h2 class="titrePage">Retards de paiement</h2>
 	<table id="tableList">
 		<tr>
 			<th>Copropriétaire</th>
@@ -24,12 +38,11 @@
 		</tr>
 	</table>
 
-	<h1 class="titrePage">Remontées d'informations</h1>
+	<h2 class="titrePage">Remontées d'informations</h2>
 	<table id="tableList">
 		<tr>
 			<th>Copropriétaire</th>
 			<th>Description</th>
-			<th>Photo</th>
 			<th>Confirmation</th>
 		</tr>
 		<!--foreach Copropriétés répéter <tr>
@@ -37,19 +50,16 @@
 		<tr>
 			<td>...</td>
 			<td>...</td>
-			<td></td>
 			<td class="modifG"><i class="checkCopropriete fas fa-check fa-lg"></i></td>
 		</tr>
 		<tr id="testLigne">
 			<td>babapopo</td>
 			<td>Ampoule grillée rez de chaussée</td>
-			<td>Rue des coquelicots</td>
 			<td class="modifG"><i class="checkCopropriete fas fa-check fa-lg"></i></td>
 		</tr>
 		<tr>
 			<td>...</td>
 			<td>...</td>
-			<td></td>
 			<td class="modifG"><i class="checkCopropriete fas fa-check fa-lg"></i></td>
 		</tr>
 
