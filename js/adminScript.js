@@ -9,15 +9,16 @@ $( document ).ready(function() {
     $deleteCroixGestionnaire.each((index, element) => {
         $(element).on('click', () => {
             let idUtilisateur = $(element).attr('id')
-
-            $.ajax({
-                url: 'model/admin/supprGestionnaire.php',
-                type: 'POST',
-                data: 'suppr=' + idUtilisateur,
-                success: function() {
-                    location.reload()
-                }
-            })
+            if(confirm("Voulez-vous supprimer ce gestionnaire de copropriété ?")){
+                $.ajax({
+                    url: 'model/admin/supprGestionnaire.php',
+                    type: 'POST',
+                    data: 'suppr=' + idUtilisateur,
+                    success: function() {
+                        location.reload()
+                    }
+                })
+            }
         })
     })
 
@@ -32,15 +33,16 @@ $( document ).ready(function() {
     $deleteCroixCopropriete.each((index, element) => {
         $(element).on('click', () => {
             let idCopropriete = $(element).attr('id')
-
-            $.ajax({
-                url: 'model/admin/supprCopropriete.php',
-                type: 'POST',
-                data: 'suppr=' + idCopropriete,
-                success: function() {
-                    location.reload()
-                }
-            })
+            if(confirm("Voulez-vous supprimer cette copropriété ?")){
+                $.ajax({
+                    url: 'model/admin/supprCopropriete.php',
+                    type: 'POST',
+                    data: 'suppr=' + idCopropriete,
+                    success: function() {
+                        location.reload()
+                    }
+                })
+            }
         })
     })
 
