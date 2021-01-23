@@ -27,11 +27,14 @@ if(isset($_GET['act']))
 				$_SESSION['connected'] = 'connected';
 				if($admin){
 					$_SESSION['role'] = 'admin';
+					$_SESSION['idUtilisateur'] = $adminDAO->getIdFromLogin($login);
 				}elseif($gestionnaire) {
 					$_SESSION['role'] = 'gestionnaire';
+					$_SESSION['idUtilisateur'] = $gestionnaireDAO->getIdFromLogin($login);
 				}elseif($coproprietaire){
 					$_SESSION['role'] = 'coproprietaire';
-				}
+					$_SESSION['idUtilisateur'] = $coproprietaireDAO->getIdFromLogin($login);
+				} // Sinon pas de connexion
 			}
 		}
 	}
