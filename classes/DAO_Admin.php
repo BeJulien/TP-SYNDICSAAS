@@ -47,9 +47,22 @@ class DAOAdmin extends DAO
 			return true;
 		}
 	}
+
+	// Récupère l'identifiant de l'administrateur connecté
+	function getIdFromLogin($login) {
+		$sql = "SELECT id FROM utilisateurs WHERE login = ? AND idRole = 1";
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($login));
+		$donnee = $requete->fetch();
+
+		if ($donnee == false) {
+			return false;
+		} else {
+			return $donnee["id"];
+		}
+	}
 		
 }
-
 
 
 ?>

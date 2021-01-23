@@ -47,6 +47,20 @@ class DAOCoproprietaire extends DAO
 			return true;
 		}
 	}
+
+	// Récupère l'identifiant du copropriétaire connecté
+	function getIdFromLogin($login) {
+		$sql = "SELECT id FROM utilisateurs WHERE login = ? AND idRole = 3";
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($login));
+		$donnee = $requete->fetch();
+
+		if ($donnee == false) {
+			return false;
+		} else {
+			return $donnee["id"];
+		}
+	}
 		
 }
 
