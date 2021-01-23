@@ -33,6 +33,39 @@ class DAOLot extends DAO
 		}
 	}
 
+	//Récuper par la copropriete et le coproprietaire
+	function getByCoproprietaire($coproprietaire,$copropriete){
+		$sql = "SELECT l.ID FROM lots l, biens b WHERE b.IdLot = l.ID AND l.IdCopropriete = ? AND b.IdProprietaire = ? ;";
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($copropriete,$coproprietaire));
+		$donnee = $requete->fetch();
+
+		if ($donnee == false){
+			$lot =  new DAOLot();
+			$lotId = $lot->getNewId();
+			$lot->newLot($copropriete);
+			return $lotId;	
+		} else {
+			return $donnee["ID"];
+		}
+	}
+
+	function newLot($copropriete){
+		$sql = 'INSERT INTO lots (Idcopropriete) VALUES (?)';
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($copropriete));
+	}
+
+	//Retourner nouveaux lot increment d'une copropriété
+	function getNewId(){
+
+		$sql = "SHOW TABLE STATUS WHERE name ='lots'";
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array());
+		$donnee = $requete->fetch();
+		return $donnee['Auto_increment'];
+	}
+
 }
 
 
