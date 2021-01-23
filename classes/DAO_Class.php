@@ -18,7 +18,7 @@
 		#constructeur (unique)
 		function __construct(){
 			$this->hostBdd = "localhost";
-			$this->nameBdd = "syndicsaasbdd3";
+			$this->nameBdd = "syndicsaasbdd";
 			$this->nameUserBdd = "root";
 			$this->MDPUserBdd = "";
 
