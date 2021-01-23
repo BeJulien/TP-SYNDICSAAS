@@ -5,15 +5,15 @@
  */
 class Copropriete 
 {
-	protected int $id;
-	protected string $nom;
-	protected string $adresse;
-	protected string $codePostal;
-	protected string $ville;
-	protected int $surfaceTotale;
-	protected string $lienImage;
-	protected int $idGestionnaire;
-	protected int $idTypeEcheance;
+	protected $id;
+	protected $nom;
+	protected $adresse;
+	protected $codePostal;
+	protected $ville;
+	protected $surfaceTotale;
+	protected $lienImage;
+	protected $idGestionnaire;
+	protected $idTypeEcheance;
 
 	
 	public function __construct($ID,$Nom, $Adresse, $CodePostal, $Ville, $SurfaceTotale,$LienImage,$IDGestionnaire,$IDTypeEcheance)
