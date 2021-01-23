@@ -6,7 +6,7 @@ $( document ).ready(function() {
 		idCopropriete = $(this).attr('value')
 		console.log(idCopropriete)
 		$.ajax({
-			url: 'model/gestionnaireModel.php',
+			url: 'model/gestionnaire/changerCopropriete.php',
 			type: 'POST',
 			data: 'idCopropriete='+ idCopropriete,
 			success : function(response){
