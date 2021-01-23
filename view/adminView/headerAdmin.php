@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-md navbar-light">
         <img id="logoNav" src="img/syndicsaas.png">
         <div class="collapse navbar-collapse" id="navbarNav">
