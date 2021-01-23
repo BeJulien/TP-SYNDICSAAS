@@ -18,7 +18,7 @@ class DAOCoproprietaire extends DAO
 	function getById($ID) 
 	{
 
-		$sql = "SELECT * FROM utilisateurs WHERE id = ?";
+		$sql = "SELECT * FROM utilisateurs WHERE id = ? AND idRole = 3";
 		$requete = $this->bdd->prepare($sql);
 		$requete->execute(array($ID));
 		
@@ -35,9 +35,9 @@ class DAOCoproprietaire extends DAO
 
 	//Verification connexion d'un coproprietaire idRole = 3 pour le coproprietaire
 	function verifLogin($login, $mdp){
-		$sql = "SELECT * FROM utilisateurs WHERE login = '".$login."' AND MotDePasse = '".$mdp."' AND idRole = '3';";
+		$sql = "SELECT * FROM utilisateurs WHERE login = ? AND MotDePasse = ? AND idRole = 3;";
 		$requete = $this->bdd->prepare($sql);
-		$requete->execute();
+		$requete->execute(array($login, $mdp));
 		$donnee = $requete->fetch();
 
 		if($donnee == false){

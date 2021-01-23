@@ -18,7 +18,7 @@ class DAOGestionnaire extends DAO
 	function getById($ID) 
 	{
 
-		$sql = "SELECT * FROM utilisateurs WHERE id = ?";
+		$sql = "SELECT * FROM utilisateurs WHERE id = ? AND idRole = 2";
 		$requete = $this->bdd->prepare($sql);
 		$requete->execute(array($ID));
 		
@@ -35,9 +35,9 @@ class DAOGestionnaire extends DAO
 
 	//Verification connexion d'un gestionnaire idRole = 2 pour le gestionnaire
 	function verifLogin($login, $mdp){
-		$sql = "SELECT * FROM utilisateurs WHERE login = '".$login."' AND MotDePasse = '".$mdp."' AND idRole = '2';";
+		$sql = "SELECT * FROM utilisateurs WHERE login = ? AND MotDePasse = ? AND idRole = 2;";
 		$requete = $this->bdd->prepare($sql);
-		$requete->execute();
+		$requete->execute(array($login, $mdp));
 		$donnee = $requete->fetch();
 
 		if($donnee == false){

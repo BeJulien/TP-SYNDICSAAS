@@ -14,11 +14,11 @@ class DAOAdmin extends DAO
 		parent::__construct();
 	}
 
-	// Récupération d'un Gestionnaire dans la table Utilisateurs selon son ID
+	// Récupération d'un Admin dans la table Utilisateurs selon son ID
 	function getById($ID) 
 	{
 
-		$sql = "SELECT * FROM utilisateurs WHERE id = ?";
+		$sql = "SELECT * FROM utilisateurs WHERE id = ? AND idRole = 1";
 		$requete = $this->bdd->prepare($sql);
 		$requete->execute(array($ID));
 		
@@ -28,16 +28,16 @@ class DAOAdmin extends DAO
 			return false;
 
 		} else {
-			$gestionnaire = new Gestionnaire($donnee["ID"],$donnee["Nom"], $donnee["Prénom"], $donnee["Adresse"], $donnee["CodePostal"], $donnee["Ville"], $donnee["Pays"], $donnee["NumeroTelephone"], $donnee["Mail"], $donnee["Login"], $donnee["MotDePasse"],$donnee["IdRole"], $donnee["IdAdmin"]);
-			return $gestionnaire;
+			$admin = new Admin($donnee["ID"],$donnee["Nom"], $donnee["Prénom"], $donnee["Adresse"], $donnee["CodePostal"], $donnee["Ville"], $donnee["Pays"], $donnee["NumeroTelephone"], $donnee["Mail"], $donnee["Login"], $donnee["MotDePasse"],$donnee["IdRole"], $donnee["IdAdmin"]);
+			return $admin;
 		}
 	}
 
 	//Verification connexion d'un administrateur idRole = 1 pour l'administrateur
 	function verifLogin($login, $mdp){
-		$sql = "SELECT * FROM utilisateurs WHERE login = '".$login."' AND MotDePasse = '".$mdp."' AND idRole = '1';";
+		$sql = "SELECT * FROM utilisateurs WHERE login = ? AND MotDePasse = ? AND idRole = 1;";
 		$requete = $this->bdd->prepare($sql);
-		$requete->execute();
+		$requete->execute(array($login, $mdp));
 		$donnee = $requete->fetch();
 
 		if($donnee == false){
