@@ -8,31 +8,17 @@
 			<th>Surface</th>
 			<th></th>
 		</tr>
-		<!--foreach Copropriétés répéter <tr>
-			Changer background-color à chaque ligne -->
+		<?php foreach ($listeBiens as $unBien) {
+			$proprietaire = new DAOCoproprietaire();
+			$nom = ($proprietaire->getbyId($unBien->idProprietaire))->nom; ?>
 		<tr>
-			<td>-</td>
-			<td>Studio</td>
-			<td>4ème étage</td>
-			<td>13m²</td>
-			<td class="modifG"><i class="fas fa-cog fa-lg"></i><i class="fas fa-lg fa-times deleteCroix"></i></td>
+			<td><?= htmlspecialchars($nom) ?></td>
+			<td><?= htmlspecialchars($unBien->type)?></td>
+			<td><?= htmlspecialchars($unBien->description)?></td>
+			<td><?= htmlspecialchars($unBien->surface)?>m²</td>
+			<td class="modifG"><i value="<?= $unBien->id ?>" class="modifierBienLine fas fa-cog fa-lg"></i><i value="<?= $unBien->id ?>" class="supprimerBienCross fas fa-lg fa-times deleteCroix"></i></td>
 		</tr>
-		<tr id="testLigne">
-			<td>babapopo</td>
-			<td>Studio</td>
-			<td>4ème étage</td>
-			<td>13m²</td>
-			<td class="modifG"><i class="fas fa-cog fa-lg"></i><i class="fas fa-lg fa-times deleteCroix"></i></td>
-		</tr>
-		<tr>
-			<td>patriroche</td>
-			<td>Studio</td>
-			<td>4ème étage</td>
-			<td>13m²</td>
-			<td class="modifG"><i class="fas fa-cog fa-lg"></i><i class="fas fa-lg fa-times deleteCroix"></i></td>
-		</tr>
+		<?php } ?>
 	</table>
 
 <a class="nav-link" href="index.php?act=ajouterBienForm"><button type="submit" class="btn btnAdd"><i class="fas fa-plus"></i> Ajouter un bien</button></a>
-
-<a class="nav-link" href="index.php?act=modifierBienForm">Modifier (temporaire)</a>

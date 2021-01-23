@@ -4,10 +4,10 @@
 				Type d'échéance<br><input type="text" disabled id="typeEcheance">
 			</div>
 			<div class="text-light text-center">
-				Budget<br><input type="text"  id="typeEcheance"><button id="modifierBudget" class=" mt-1 btn btnAdd">Modifier</button>
+				Budget<br><input type="text"  id="buget"><button id="modifierBudget" class=" mt-1 btn btnAdd">Modifier</button>
 			</div>
 			<div class="text-light text-center">
-				Jours assemblés (mensuel)<br><input type="text"  id="typeEcheance"><button id="modifierEcheance" class=" mt-1 btn btnAdd">Modifier</button>
+				Jours assemblés (mensuel)<br><input type="text"  id="jourAssemble"><button id="modifierEcheance" class=" mt-1 btn btnAdd">Modifier</button>
 			</div>
 		</div>
 

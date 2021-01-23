@@ -1,19 +1,16 @@
 <h1 class="titrePage">Ajouter un bien</h1>
-
-<form method="POST">
+<form method="POST" action="index.php?act=creerBien">
 <div class="mx-auto w-75">
 	<div class="form-group">
 		<!-- REMPLIR AVEC COPROPRIETAIRES -->
 		<select type="text" name="proprietaire" class="form-control">
-			<option value="0">Aucun propriétaire</option>
+			<?php foreach($listeCoproprietaire as $unCoproprietaire){?>
+				<option value="<?= $unCoproprietaire->id ?>"><?= $unCoproprietaire->prenom.' '.$unCoproprietaire->nom ?></option>
+			<?php }?>
 		</select>
 	</div>
 	<div class="form-group">
-		<!-- REMPLIR TYPE VIA BDD -->
-		<select name="type" class="form-control">
-			<option value="0">T1</option>
-			<option value="0">T1</option>
-		</select>
+		<input type="text" name="type" class="form-control" placeholder="Type (Studio, T2, T3, T4)">
 	</div>
 	<div class="form-group">
 		<input type="text" name="description" class="form-control" placeholder="Description">
