@@ -61,6 +61,64 @@ class DAOCoproprietaire extends DAO
 			return $donnee["id"];
 		}
 	}
+
+	function getByCoproprieteID($ID){
+		$sql = "SELECT * FROM utilisateurs WHERE IdCopropriete = ?";
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($ID));
+
+		$listeCoproprietaire = [];
+
+		//$donnee = $requete->fetch();
+		while($donnee = $requete->fetch()){
+			if (!$donnee) {
+                return false;
+            }
+			$coproprietaire = new Coproprietaire($donnee["ID"],$donnee["Nom"], $donnee["Prénom"], $donnee["Adresse"], $donnee["CodePostal"], $donnee["Ville"], $donnee["Pays"], $donnee["NumeroTelephone"], $donnee["Mail"], $donnee["Login"], $donnee["MotDePasse"],$donnee["IdRole"], $donnee["IdCopropriete"]);
+			array_push($listeCoproprietaire, $coproprietaire);
+		}
+
+		return $listeCoproprietaire;
+	}
+
+	function createCoproprietaire($data){
+
+		$sql = "INSERT INTO `utilisateurs`(`Nom`, `Prénom`, `Adresse`, `CodePostal`, `Ville`, `Pays`,
+										 `NumeroTelephone`, `Mail`, `Login`, `MotDePasse`, `IdRole`, `IdCopropriete`)
+
+		VALUES (?,?,?,?,?,?,?,?,?,?,3,?)";
+		$requete = $this->bdd->prepare($sql);
+		echo $data['nom'];
+		if ($requete->execute(array($data['nom'], $data['prenom'], $data['adressePostale'], $data['cp'], 
+									$data['ville'], $data['pays'],$data['telephone'], $data['email'],
+									 $data['identifiant'], $data['mdp'],$data['copropriete']))) {
+            return true;
+        } else {
+            return false;
+        }
+	}
+
+	function modifierCoproprietaire($data){
+		echo "test";
+		$sql =  "UPDATE utilisateurs 
+				SET Nom = ?, Prénom = ?, Adresse = ?, CodePostal = ?,
+				Ville = ?, Pays = ?, NumeroTelephone = ?, Mail = ?, Login = ?, MotDePasse = ? 
+				WHERE ID = ? ";
+		$requete = $this->bdd->prepare($sql);
+		if ($requete->execute(array($data['nom'], $data['prenom'], $data['adressePostale'], $data['cp'], 
+									$data['ville'], $data['pays'],$data['telephone'], $data['email'],
+									 $data['identifiant'], $data['mdp'],$data['coproprietaire']))) {
+            return true;
+        } else {
+            return false;
+        }
+	}
+
+	function deleteCoproprietaire($ID){
+		$sql = "DELETE FROM utilisateurs WHERE ID = ? ";
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($ID));
+	}
 		
 }
 
