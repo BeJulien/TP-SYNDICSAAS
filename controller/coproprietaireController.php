@@ -11,6 +11,10 @@ switch ($act) {
 	case 'accueil':
 		include('view/coproprietaireView/accueil.php');
 		break;
+
+	case '':
+		include('view/coproprietaireView/remonteeInformation.php');
+		break;
 	
 	case 'deconnexion':
 		session_unset();

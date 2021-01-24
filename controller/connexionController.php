@@ -22,7 +22,6 @@ if(isset($_GET['act']))
 			$coproprietaireDAO = new DAOCoproprietaire();
 			$coproprietaire = $coproprietaireDAO->verifLogin($login,$mdp);
 
-			//TODO: Récupérer id utilisateur dans les fonctions.
 			if($admin || $gestionnaire || $coproprietaire){
 				$_SESSION['connected'] = 'connected';
 				if($admin){
