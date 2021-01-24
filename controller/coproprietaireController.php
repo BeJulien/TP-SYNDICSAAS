@@ -12,7 +12,7 @@ switch ($act) {
 		include('view/coproprietaireView/accueil.php');
 		break;
 
-	case '':
+	case 'remonteeInformation':
 		include('view/coproprietaireView/remonteeInformation.php');
 		break;
 	
