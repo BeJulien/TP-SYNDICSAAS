@@ -18,7 +18,7 @@ if($_SESSION['idCopropriete']){
 					"email" => $email,"telephone" => $telephone,"adressePostale" => $adressePostale,
 					"cp" => $cp,"ville" => $ville,"pays" => $pays,"copropriete" => $_SESSION['idCopropriete']);
 
-	$NewCoproprietaire = new DAOCoproprietaire;
+	$NewCoproprietaire = new DAOCoproprietaire();
 	$NewCoproprietaire->createCoproprietaire($data);
 	header("Location: index.php?act=gestionCoproprietaire");
 }
