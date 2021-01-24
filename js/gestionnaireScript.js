@@ -10,7 +10,7 @@ $( document ).ready(function() {
 			type: 'POST',
 			data: 'idCopropriete='+ idCopropriete,
 			success : function(response){
-				window.location.reload()
+				window.location = "index.php?act=accueil"
 			},
 			error : function(response){
 				console.log(response)
@@ -75,6 +75,47 @@ $( document ).ready(function() {
 				}
 			})
 		}
+	})
+
+	/* Click sur bouton valider une remontee d'information*/
+	$('.validerRemonteeInformation').on('click',function(){
+
+		if(confirm("Voulez-vous vraiment valider cette remontée d'information ?")){
+
+			idRemontee = $(this).attr('value')
+			console.log(idRemontee)
+			$.ajax({
+				url: 'model/gestionnaire/validerRemonteeInformations.php',
+				type: 'POST',
+				data: 'idRemontee='+ idRemontee,
+				success : function(response){
+					console.log(response)
+					window.location.reload()
+				},
+				error : function(response){
+					console.log(response)
+				}
+			})
+		}
+	})
+
+	/* Click sur bouton valider une remontee d'information*/
+	$('.relancerRetardPaiement').on('click',function(){
+
+			idEcheance = $(this).attr('value')
+			console.log(idEcheance)
+			$.ajax({
+				url: 'model/gestionnaire/creerRelance.php',
+				type: 'POST',
+				data: 'idEcheance='+ idEcheance,
+				success : function(response){
+					console.log(response)
+					//window.location.reload()
+				},
+				error : function(response){
+					console.log(response)
+				}
+			})
 	})
 
 });
