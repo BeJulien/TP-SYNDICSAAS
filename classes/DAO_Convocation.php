@@ -35,6 +35,38 @@ class DAOConvocation extends DAO
 		}
 	}
 
+	function getByCopropriete($idCopropriete){
+		$sql = "SELECT * FROM convocationsassemblees WHERE DateAssemblee >= NOW() AND IdCopropriete = ?";
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($idCopropriete));
+		
+		$listeConvocation = [];
+
+		//$donnee = $requete->fetch();
+		while($donnee = $requete->fetch()){
+			if (!$donnee) {
+                return false;
+            }
+			$convocation = new Convocation($donnee["ID"],$donnee["DateEnvoi"], $donnee["IdCopropriete"], $donnee["DateAssemblee"], $donnee["HeureAssemblee"], $donnee["LieuAssemblee"], $donnee["OrdresDuJour"]);
+			array_push($listeConvocation, $convocation);
+		}
+		return $listeConvocation;
+
+	}
+
+	function creerConvocation($data){
+		$sql= "INSERT INTO `convocationsassemblees`(`DateEnvoi`, `IdCopropriete`, `DateAssemblee`, `HeureAssemblee`, `LieuAssemblee`, `OrdresDuJour`) VALUES (?,?,?,?,?,?)";
+
+		$dateEnvoi = date("Y-m-d");
+		$idCopropriete = $data['copropriete'];
+		$lieu = $data['lieu'];
+		$ordres = $data['ordres'];
+		$date = $data['date'];
+		$heure = $data['heure'];
+
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($dateEnvoi,$idCopropriete,$date,$heure,$lieu,$ordres));
+	}
 
 		
 }

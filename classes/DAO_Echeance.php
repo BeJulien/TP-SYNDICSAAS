@@ -75,6 +75,47 @@ class DAOEcheance extends DAO
 			return $arrayUnpaidEcheance;
 	}
 
+	function getAllUnpaidEcheanceByCopropriete($IdCopropriete){
+
+		$sql = "SELECT e.ID,SommeARegler,nom,prénom,u.ID
+				FROM utilisateurs u, echeancesaregler e
+				WHERE IdProprietaire = u.ID
+				AND DateReglement is NULL AND DateLimitePaiement < NOW()
+				AND u.IdCopropriete = ?";
+
+		$requete = $this->bdd->prepare($sql);
+        $requete->execute(array($IdCopropriete));
+        $listeRetard = [];
+
+		while ($donnee = $requete->fetch()) {
+			if (!$donnee) {
+			    return false;
+			}
+			//var_dump($donnee);
+			$relance = new DAOEcheance();
+			$relance = $relance->getRelanceByEcheance($donnee['ID']);
+
+			$retard = array("id" => $donnee['0'],"SommeARegler" => $donnee['SommeARegler'],
+			            "idCoproprietaire" => $donnee['4'],"nom" => $donnee['nom'], "prenom" => $donnee['prénom'],"relance" => $relance);
+			array_push($listeRetard, $retard);
+		}
+		return $listeRetard;
+	}
+
+	function getRelanceByEcheance($idEcheance){
+		$sql = "SELECT r.ID FROM relancepaiement r, echeancesaregler e
+				WHERE r.IdEcheance = e.ID AND r.IdEcheance = ?";
+		$requete = $this->bdd->prepare($sql);
+        $requete->execute(array($idEcheance));
+        $donnee = $requete->fetch();
+        if ($donnee == false){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+
 
 		
 }

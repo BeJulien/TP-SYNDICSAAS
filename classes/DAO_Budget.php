@@ -35,6 +35,23 @@ class DAOBudget extends DAO
 		}
 	}
 
+	function getByCopropriete($IdCopropriete){
+		$year = date('Y');
+		$sql = "SELECT Somme FROM budget WHERE Annee = ? AND IdCopropriete = ? ;";
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($year,$IdCopropriete));
+		
+		$donnee = $requete->fetch();
+
+		if ($donnee == false){
+			return false;
+
+		} else {
+			return $donnee["Somme"];
+		}
+
+	}
+
 
 		
 }

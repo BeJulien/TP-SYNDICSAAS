@@ -32,6 +32,16 @@ class DAORelance extends DAO
 			return $relance;
 		}
 	}
+
+	function creerRelance($idEcheance,$dateEnvoi){
+		echo $idEcheance;
+		echo $dateEnvoi;
+		$sql = "INSERT INTO relancepaiement (DateEnvoi,IdEcheance) VALUES (?,?)";
+
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($dateEnvoi,$idEcheance));
+
+	}
 		
 }
 

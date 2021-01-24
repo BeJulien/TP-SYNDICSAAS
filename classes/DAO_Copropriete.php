@@ -126,6 +126,54 @@ class DAOCopropriete extends DAO
 			return false;
 		}
 	}
+
+	//JOHAN DIMANCHE
+
+	function getEcheance($idCopropriete){
+		$sql = "SELECT Libelle FROM typeecheance t, coproprietes c WHERE c.IdTypeEcheance = t.ID AND c.ID = ? ;";
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($idCopropriete));
+		
+		$donnee = $requete->fetch();
+		if ($donnee == false){
+			return "Erreur";
+
+		} else {
+			return $donnee['Libelle'];
+		}
+
+	}
+
+	function modifierBudget($idCopropriete,$budget){
+		$year = date('Y');
+
+		$sql = "SELECT Somme FROM budget WHERE IdCopropriete = ? AND Annee = ?";
+		$requete = $this->bdd->prepare($sql);
+		$requete->execute(array($idCopropriete,$year));
+		$donnee = $requete->fetch();
+		if($donnee == false){
+			$copropriete = new DAOCopropriete();
+			$copropriete->creerBudget($idCopropriete,$budget);
+		}
+		elseif ($budget != $donnee['Somme']) {
+			$sqlUpdate = "UPDATE budget SET Somme = ? WHERE IdCopropriete = ? AND Annee = ? ;";
+			$requete = $this->bdd->prepare($sqlUpdate);
+			$requete->execute(array($budget, $idCopropriete,$year));
+		}
+	}
+
+	function creerBudget($idCopropriete,$budget){
+		$year = date('Y');
+
+		$sqlInsert = "INSERT INTO budget (Somme,Annee,IdCopropriete) VALUES (?,?,?) ;";
+		$requete = $this->bdd->prepare($sqlInsert);
+
+		if ($requete->execute(array($budget,$year,$idCopropriete))) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 		
 }
 

@@ -50,5 +50,38 @@
                 return false;
             }
         }
+
+        //Johan
+        function getByCopropriete($idCopropriete){
+
+            $sql = "SELECT r.ID, r.Description,r.IncidentResolu,u.nom,u.prénom FROM remonteeinformations r, utilisateurs u WHERE r.IdProprietaire = u.ID AND idcopropriete = ? ORDER BY IncidentResolu";
+            $requete = $this->bdd->prepare($sql);
+            $requete->execute(array($idCopropriete));
+
+            $listeremontees = [];
+
+            while ($donnee = $requete->fetch()) {
+                if (!$donnee) {
+                    return false;
+                }
+                $remontee = array("id" => $donnee['ID'],"description" => $donnee['Description'],
+                            "incidentResolu" => $donnee['IncidentResolu'],"nom" => $donnee['nom'],
+                            "prenom" => $donnee['prénom']);
+                array_push($listeremontees, $remontee);
+            }
+
+            return $listeremontees;
+        }
+
+        function validerRemontee($id){
+            $sql = "UPDATE remonteeinformations SET IncidentResolu = '1' WHERE ID = ? ";
+            $requete = $this->bdd->prepare($sql);
+            if ($requete->execute(array($id))) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
     }
 ?>
