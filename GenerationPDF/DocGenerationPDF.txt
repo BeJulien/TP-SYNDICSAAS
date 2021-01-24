@@ -1,0 +1,7 @@
+DOSSIER FPDF : Contient la classe FPDF qui permet la génération des pdf en php.
+
+Fichiers PDF_xxx : classes qui permettent la création du PDF avec la classe FPDF, qui récupèrent les données envoyées par les fichiers GENERATION_xxx pour les afficher dans le PDF, qui permettent l'ajout de footer ou de header au PDF.
+
+Fichiers GENERATION_xxx : classes qui mettent en forme les données à afficher dans le PDF aux fichiers PDF_xxx. Parfois les données doivent être insérées dans des textes, ou doivent être mises sout forme de tableau. Dans ces classes existent aussi les méthodes qui génèrent le PDF avec les données envoyées.
+
+Fichiers AFFICHAGE_xxx : fichiers php qui envoie les données à mettre en forme aux fichiers GENERATION_xxx. C'est par ces fichiers que sont fait les appels à la BDD pour récupérer les données voulues. Cette partie est actuellement écrite en dur pour récupérer des données précises.
