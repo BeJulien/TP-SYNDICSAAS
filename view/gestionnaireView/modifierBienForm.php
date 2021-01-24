@@ -24,6 +24,6 @@
 <div class="btForm"><button type="submit" class="btn btn-warning">Modifier</button></div>
 </form>
 <div>
-<a class="nav-link" href="index.php?act=accueil"><button type="submit" class="btn btn-danger d-block mx-auto">Annuler</button></a>
+<a class="nav-link" href="index.php?act=gestionBiens"><button type="submit" class="btn btn-danger d-block mx-auto">Annuler</button></a>
 </div>
 

@@ -35,21 +35,10 @@
 			</div>
 			
 	</div>
-	<!-- Liste -->
-	<div class="col-md-6 col-sm-4 mx-auto mx-auto">
-		<div class="w-50 h-75 mt-5">
-			<div class="bg-warning"> Liste des biens dans la copropriété&nbsp;&nbsp;<i class="fas fa-lg fa-plus text-success"></i>&nbsp;&nbsp;<i class="fas fa-lg fa-minus text-secondary"></i></div>
-			<!--Liste des copropriétés à remplir -->
-			<div class="bg-light border-secondary border h-75" id="ListeCopropriete">
-				
-			</div>
-			<div></div>
-		</div>
-	</div>
 </div>
 
 <div class="btForm"><button type="submit" class="btn btn-warning">Ajouter</button></div>
 </form>
 <div>
-<a class="nav-link" href="index.php?act=accueil"><button type="submit" class="btn btn-danger d-block mx-auto">Annuler</button></a>
+<a class="nav-link" href="index.php?act=gestionCoproprietaire"><button type="submit" class="btn btn-danger d-block mx-auto">Annuler</button></a>
 </div>
