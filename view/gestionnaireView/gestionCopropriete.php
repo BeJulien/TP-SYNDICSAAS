@@ -1,13 +1,14 @@
 
 		<div class="d-flex justify-content-around mb-4">
 			<div class="text-light text-center">
-				Type d'échéance<br><input type="text" disabled id="typeEcheance">
+				Type d'échéance<br><input class="form-control" value="<?= $typeEcheance ?>" type="text" disabled id="typeEcheance">
 			</div>
 			<div class="text-light text-center">
-				Budget<br><input type="text"  id="buget"><button id="modifierBudget" class=" mt-1 btn btnAdd">Modifier</button>
-			</div>
-			<div class="text-light text-center">
-				Jours assemblés (mensuel)<br><input type="text"  id="jourAssemble"><button id="modifierEcheance" class=" mt-1 btn btnAdd">Modifier</button>
+				Budget<br>
+				<form method="POST" action="index.php?act=modifierBudget">
+					<input value="<?= $budget ?>" type="number" class="form-control" id="budget" min="0" name="budget">
+					<button id="modifierBudget" class="form-control mt-1 btn btnAdd">Modifier</button>
+				</form>
 			</div>
 		</div>
 
@@ -17,50 +18,44 @@
 		<tr>
 			<th>Copropriétaire</th>
 			<th>Somme en retard</th>
-			<th id="relanceTab">Relance</th>
+			<th class="text-center" id="relanceTab">Relance</th>
 		</tr>
-		<!--foreach Copropriétés répéter <tr>
-			Changer background-color à chaque ligne -->
+		<?php foreach ($retardTab as $unRetard) { ?>
 		<tr>
-			<td>...</td>
-			<td>...</td>
-			<td class="modifG"><i class="checkCopropriete fas fa-check fa-lg"></i></td>
+			<td><?= htmlspecialchars($unRetard['prenom']).' '.htmlspecialchars($unRetard['nom']) ?></td>
+			<td><?= htmlspecialchars($unRetard['SommeARegler']) ?></td>
+			<td class="modifG">
+				<?php if(!$unRetard['relance']) {?>
+				<a href="./GenerationPDF/AFFICHAGE_Relance.php?idCoproprietaire=<?= $unRetard['idCoproprietaire'] ?>" target="_blank"><button class="btn btn-secondary btn-sm relancerRetardPaiement" value="<?= $unRetard['id'] ?>">Relancer</button></a>
+				<?php }else{ ?>
+					<i class="checkCopropriete fas fa-check fa-lg"></i>
+				<?php }?>
+			</td>
 		</tr>
-		<tr id="testLigne">
-			<td>Les immuables</td>
-			<td>Rodez</td>
-			<td class="modifG"><i class="fas fa-lg fa-times deleteCroix"></i></td>
-		</tr>
-		<tr>
-			<td>patriroche</td>
-			<td>21,53 €</td>
-			<td class="modifG"><i class="checkCopropriete fas fa-check fa-lg"></i></td>
-		</tr>
+		<?php } ?>
 	</table>
 
 	<h2 class="titrePage">Remontées d'informations</h2>
 	<table id="tableList">
-		<tr>
+		<tr class="text-center">
 			<th>Copropriétaire</th>
 			<th>Description</th>
 			<th>Confirmation</th>
 		</tr>
-		<!--foreach Copropriétés répéter <tr>
-			Changer background-color à chaque ligne -->
-		<tr>
-			<td>...</td>
-			<td>...</td>
-			<td class="modifG"><i class="checkCopropriete fas fa-check fa-lg"></i></td>
-		</tr>
-		<tr id="testLigne">
-			<td>babapopo</td>
-			<td>Ampoule grillée rez de chaussée</td>
-			<td class="modifG"><i class="checkCopropriete fas fa-check fa-lg"></i></td>
-		</tr>
-		<tr>
-			<td>...</td>
-			<td>...</td>
-			<td class="modifG"><i class="checkCopropriete fas fa-check fa-lg"></i></td>
-		</tr>
+		<!--foreach Copropriétés répéter <tr>-->
 
+	<?php foreach($remonteesTab as $uneRemontee){ ?>
+
+		<tr>
+			<td><?= htmlspecialchars($uneRemontee['prenom']).' '.htmlspecialchars($uneRemontee['nom']) ?></td>
+			<td><?= htmlspecialchars($uneRemontee['description']) ?></td>
+			<td class="modifG">
+				<?php if($uneRemontee['incidentResolu'] == 0) { ?>
+				<button class="btn btn-secondary btn-sm validerRemonteeInformation" value="<?= $uneRemontee['id'] ?>">Valider</button>
+				<?php }else{ ?>
+				<i class=" w-100 text-success fas fa-check fa-lg"></i>
+				<?php } ?>
+			</td>
+		</tr>
+	<?php }?>
 	</table>

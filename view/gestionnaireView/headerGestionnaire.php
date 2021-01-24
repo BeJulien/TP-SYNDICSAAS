@@ -23,6 +23,11 @@
                 </a></div>
               </li>
               <li class="nav-item">
+                <div><a class="nav-link"  <?php if(isset($_SESSION['idCopropriete'])) {?>href="index.php?act=gestionConvocation"<?php } ?>>
+                  <button <?php if(!isset($_SESSION['idCopropriete'])) echo "disabled";?> class="btn btnNav">Gestion des convocations</button>
+                </a></div>
+              </li>
+              <li class="nav-item">
                 <div><a class="nav-link" href="index.php?act=changerCopropriete">
                   <button class="btn btnNav" id="changeCopropriete" data-toggle="modal" data-target="#coproprieteModal">Changer de copropriété</button>
                 </a></div>
