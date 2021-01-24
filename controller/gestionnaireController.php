@@ -4,15 +4,18 @@ include('view/gestionnaireView/headerGestionnaire.php');
 //echo $_SESSION['idUtilisateur'];
 
 if(isset($_SESSION['idCopropriete'])){
-	//echo $_SESSION['idCopropriete'];
+	echo $_SESSION['idCopropriete'];
 }else{
-	echo "choisir un copropriété";
+	//echo "choisir un copropriété";
 }
 
 
 
 if(isset($_GET['act'])){
 	$act = $_GET['act'];
+	if($act == 'connect'){
+		$act = 'changerCopropriete';
+	}
 
 switch ($act) {
 
@@ -82,8 +85,33 @@ switch ($act) {
 		break;
 
 	case 'gestionCopropriete':
+		include('model/gestionnaire/gestionCopropriete.php');
 		include('view/gestionnaireView/gestionCopropriete.php');
 		break;
+
+	case 'modifierBudget':
+		include('model/gestionnaire/modifierBudget.php');
+		break;
+
+
+	/* GESTION CONVOCATION */	
+
+	case 'gestionConvocation':
+		include('model/gestionnaire/gestionConvocation.php');
+		include('view/gestionnaireView/gestionConvocation.php');
+		break;
+
+
+	case 'ajouterConvocationForm':
+		include('view/gestionnaireView/ajouterConvocationForm.php');
+		break;
+
+	case 'creerConvocation':
+		include('model/gestionnaire/creerConvocation.php');
+		include('view/gestionnaireView/ajouterConvocationForm.php');
+		break;
+
+	/* DECONNEXION */
 
 	case 'deconnexion':
 		session_unset();
